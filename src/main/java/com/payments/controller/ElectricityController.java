@@ -29,8 +29,8 @@ public class ElectricityController {
     }
 
     @PatchMapping("/pay")
-    public ResponseEntity<?> pay(@RequestParam long socialNumber, @RequestParam int paymentAmount) throws NotFoundException {
-        boolean pay = electricityService.pay(socialNumber, paymentAmount);
-        return pay ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+    public ResponseEntity<?> pay(@RequestBody Request request) throws NotFoundException {
+        //boolean pay = electricityService.pay(socialNumber, paymentAmount);
+        return ResponseEntity.ok(request);
     }
 }
